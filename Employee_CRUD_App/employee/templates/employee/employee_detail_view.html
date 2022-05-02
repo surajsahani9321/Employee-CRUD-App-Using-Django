@@ -1,0 +1,51 @@
+{% extends 'employee/base.html' %}
+{% load static %}
+
+{% block body %}
+<div class="container-fluid">
+        <div class="row">
+          <div class="col-12 mb-3">
+          <div class="col-12 mb-3">
+              <div id="content-wrapper">
+        <div class="container-fluid">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="">User : {{ object.name }} </a>
+            </ol>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table text-warning"></i>
+                    Details Of Student
+                </div>
+                <div class="card-body">
+                    {% for message in messages %}
+                        <div class="alert alert-{{ message.tags }} alert-dismissible" role="alert">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+
+ <div class="row">
+        <div class="col-12">
+            <ul class="list-group">
+              <li class="list-group-item"><strong>Name:</strong> {{ object.name }}</li>
+              <li class="list-group-item"><strong>Roll Number :</strong> {{ object.empid }}</li>
+              <li class="list-group-item"><strong>Branch :</strong> {{ object.branch }}</li>
+              <li class="list-group-item"><strong>Email :</strong> {{ object.email }}</li>
+              <li class="list-group-item"><strong>Mobile :</strong> {{ object.mobile }}</li>
+              <li class="list-group-item"><strong>Address :</strong> {{ object.address }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row top-buffer" style="padding-top: 10px">
+        <div class="col-12">
+                <a href="{% url 'list' %}"><button type="button" class="btn btn-success">Back</button></a>
+        </div>
+    </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock %}

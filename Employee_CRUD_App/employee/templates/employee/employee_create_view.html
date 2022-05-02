@@ -1,0 +1,98 @@
+{% extends 'employee/base.html' %}
+
+
+{% load static %}
+
+{% block body %}
+    <div id="content-wrapper">
+
+        <div class="container-fluid">
+            <!-- Breadcrumbs-->
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item">
+                    <a href="#">CRUD</a>
+                </li>
+                <li class="breadcrumb-item active">Add</li>
+            </ol>
+            <div class="card mb-3">
+                <div class="card-header">
+                    <i class="fas fa-table"></i>
+                    Crud Add
+                </div>
+                <div class="card-body">
+                  <form class="form-horizontal" action="{% url 'create' %}" method="POST" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="name" placeholder=" Name" id="inputFirst" required="">
+                                    <label for="inputFirst">Name</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="number" class="form-control" name="empid" placeholder="Roll Number" id="inputLast" required="">
+                                    <label for="inputLast">ID</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input type="text" class="form-control" name="branch" placeholder="Branch" id="inputdescription" required="">
+                                    <label for="inputdescription">Branch</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-label-group">
+                                    <input class="form-control" type="tel" name="email" placeholder="Email" id="inputMobile" required="">
+                                    <label for="inputMobile">Email</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-6">
+                               <div class="form-label-group">
+                                    <input type="text" class="form-control" name="mobile" placeholder="Mobile"  required="">
+                                    <label>Mobile</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                               <div class="form-label-group">
+                                    <input type="text" class="form-control" name="address" placeholder="Address"  required="">
+                                    <label >Address</label>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="form-row">
+                            <div class="col-md-12">
+                               <div class="form-label-group">
+                                    <input type="file" class="form-control" name="images" placeholder="Password" id="inputdescription" required="">
+                                    <label for="inputdescription">Images</label>
+                                </div>
+                            </div>
+                           
+                            
+                        </div>
+                    </div>
+                    <button class="btn btn-primary btn-block" type="submit">Submit &nbsp;&nbsp;&nbsp;<span></span></button>
+                </form>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascript %}
+    <script type="text/javascript">
+        $("#id_username").attr("placeholder", "Enter Username");
+        $("#id_password").attr("placeholder", "Enter Password");
+    </script>
+{% endblock %}
